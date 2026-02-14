@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 5%;
+    --foreground: 220 10% 90%;
+
+    --card: 220 18% 8%;
+    --card-foreground: 220 10% 90%;
+
+    --popover: 220 18% 8%;
+    --popover-foreground: 220 10% 90%;
+
+    --primary: 228 80% 70%;
+    --primary-foreground: 220 20% 5%;
+
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 220 10% 75%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent-blue: 228 80% 70%;
+    --accent-purple: 263 70% 70%;
+    --accent-green: 160 60% 65%;
+    --accent-amber: 25 85% 65%;
+
+    --accent: 228 80% 70%;
+    --accent-foreground: 220 20% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 228 80% 70%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 20% 5%;
+    --sidebar-foreground: 220 10% 90%;
+    --sidebar-primary: 228 80% 70%;
+    --sidebar-primary-foreground: 220 20% 5%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 220 10% 90%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 228 80% 70%;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+    cursor: none !important;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: hsl(var(--accent-blue) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .text-accent-blue {
+    color: hsl(var(--accent-blue));
+  }
+  .text-accent-purple {
+    color: hsl(var(--accent-purple));
+  }
+  .text-accent-green {
+    color: hsl(var(--accent-green));
+  }
+  .text-accent-amber {
+    color: hsl(var(--accent-amber));
+  }
+  .bg-accent-blue {
+    background-color: hsl(var(--accent-blue));
+  }
+  .bg-accent-purple {
+    background-color: hsl(var(--accent-purple));
+  }
+  .bg-accent-green {
+    background-color: hsl(var(--accent-green));
+  }
+  .bg-accent-amber {
+    background-color: hsl(var(--accent-amber));
+  }
+  .border-accent-blue {
+    border-color: hsl(var(--accent-blue));
+  }
+  .border-accent-purple {
+    border-color: hsl(var(--accent-purple));
+  }
+  .border-accent-green {
+    border-color: hsl(var(--accent-green));
+  }
+  .border-accent-amber {
+    border-color: hsl(var(--accent-amber));
+  }
+  .bg-accent-blue\/10 {
+    background-color: hsl(var(--accent-blue) / 0.1);
+  }
+  .bg-accent-purple\/10 {
+    background-color: hsl(var(--accent-purple) / 0.1);
+  }
+  .bg-accent-green\/10 {
+    background-color: hsl(var(--accent-green) / 0.1);
+  }
+  .bg-accent-amber\/10 {
+    background-color: hsl(var(--accent-amber) / 0.1);
+  }
+}

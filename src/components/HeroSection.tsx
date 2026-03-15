@@ -54,7 +54,7 @@ const HeroSection = () => {
             View Projects
           </a>
           <a
-            href="/resume.pdf"
+            href="/Medhansh_Poojari_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 border border-muted-foreground/30 text-foreground font-heading font-medium text-sm tracking-wide hover:border-foreground/60 transition-colors"

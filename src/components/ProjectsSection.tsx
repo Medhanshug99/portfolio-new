@@ -7,8 +7,30 @@ import project2 from "@/assets/p2.png";
 import project3 from "@/assets/p3.png";
 import project4 from "@/assets/p4.png";
 import project5 from "@/assets/p5.png";
+import sortingImg from "@/assets/sorting.png";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  year: string;
+  type: string;
+  color: string;
+  image: string;
+  link?: string;
+};
+
+const projects: Project[] = [
+  {
+    title: "Sorting Simulator",
+    description: "Interactive Algorithm Visualization Tool",
+    tech: ["React.js", "TypeScript", "Tailwind CSS"],
+    year: "2026",
+    type: "Web App",
+    color: "text-accent-blue",
+    image: sortingImg,
+    link: "https://sort-matrix-opal.vercel.app/"
+  },
   {
     title: "Digital Footprint Simulator",
     description: "A virtual system that mirrors a person’s personality and behavior",
@@ -17,6 +39,7 @@ const projects = [
     type: "Web App",
     color: "text-accent-blue",
     image: project1,
+    link: "https://digital-persona-simulator-01.vercel.app/"
   },
   {
     title: "Contact Hub",
@@ -26,6 +49,7 @@ const projects = [
     type: "Web App",
     color: "text-accent-purple",
     image: project2,
+    link: "https://contacthub-form-handler.onrender.com/"
   },
   {
     title: "BMI Calculator",
@@ -35,6 +59,7 @@ const projects = [
     type: "Web App",
     color: "text-accent-green",
     image: project3,
+    link: "https://bmi-calc-web.vercel.app/"
   },
   {
     title: "Currency Converter",
@@ -44,6 +69,7 @@ const projects = [
     type: "Web App",
     color: "text-accent-amber",
     image: project4,
+    link: "https://simple-currency-converter-1.vercel.app/"
   },
   {
     title: "User Interaction Tracker",
@@ -53,6 +79,7 @@ const projects = [
     type: "Web App",
     color: "text-accent-blue",
     image: project5,
+    link: "https://user-interaction-tracker-1.vercel.app/"
   },
 ];
 
@@ -90,9 +117,10 @@ const ProjectsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="border-b border-border py-8 md:py-10 group"
+            className={`border-b border-border py-8 md:py-10 group ${project.link ? "cursor-pointer" : ""}`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            onClick={() => project.link && window.open(project.link, "_blank")}
             data-cursor-hover
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
